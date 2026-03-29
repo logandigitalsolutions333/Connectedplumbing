@@ -3,82 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Connected Plumbing | South Lake Tahoe Plumber</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,sans-serif;}
-body{color:#222;line-height:1.6;}
+:root{
+--primary:#0A84FF;
+--dark:#111;
+--text:#444;
+--light:#f8f9fb;
+--border:#e6e8ec;
+}
 
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Inter',sans-serif;
+color:var(--text);
+line-height:1.6;
+background:#fff;
+}
+
+/* LAYOUT */
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
+
+section{
+padding:80px 0;
+}
+
+/* HEADER */
 header{
-position:sticky;top:0;background:#fff;padding:15px 20px;
-display:flex;justify-content:space-between;align-items:center;
-border-bottom:1px solid #eee;z-index:1000;
+position:sticky;
+top:0;
+background:#fff;
+border-bottom:1px solid var(--border);
+z-index:1000;
 }
 
-.logo{font-weight:700;font-size:1.1rem;}
-.phone{color:#0077ff;font-weight:bold;text-decoration:none;}
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
 
+.logo{
+font-weight:600;
+font-size:1.1rem;
+color:var(--dark);
+}
+
+.phone{
+text-decoration:none;
+font-weight:600;
+color:var(--primary);
+}
+
+/* HERO */
 .hero{
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 url('https://images.unsplash.com/photo-1581578731548-c64695cc6952');
-background-size:cover;color:#fff;text-align:center;padding:100px 20px;
+background-size:cover;
+color:#fff;
+text-align:center;
+padding:120px 20px;
 }
 
-.hero h1{font-size:2.3rem;margin-bottom:15px;}
-.hero p{margin-bottom:25px;}
+.hero h1{
+font-size:2.6rem;
+font-weight:700;
+margin-bottom:15px;
+}
 
+.hero p{
+font-size:1.05rem;
+opacity:.9;
+margin-bottom:30px;
+}
+
+/* BUTTONS */
 .btn{
-display:inline-block;padding:14px 22px;margin:5px;
-border-radius:6px;text-decoration:none;font-weight:bold;
+display:inline-block;
+padding:14px 24px;
+border-radius:8px;
+font-weight:600;
+text-decoration:none;
+transition:.2s ease;
 }
 
-.btn-primary{background:#0077ff;color:#fff;}
-.btn-secondary{background:#fff;color:#000;}
+.btn-primary{
+background:var(--primary);
+color:#fff;
+box-shadow:0 6px 18px rgba(10,132,255,.25);
+}
 
-section{padding:60px 20px;max-width:1100px;margin:auto;}
+.btn-primary:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 24px rgba(10,132,255,.35);
+}
 
-h2{margin-bottom:20px;font-size:1.8rem;}
+.btn-secondary{
+background:#fff;
+color:#111;
+border:1px solid #ddd;
+}
 
-.services,.reviews{
-display:grid;gap:20px;
+.btn-secondary:hover{
+background:#f1f1f1;
+}
+
+/* CARDS */
+.grid{
+display:grid;
+gap:24px;
 }
 
 .card{
-padding:20px;border:1px solid #eee;border-radius:8px;
-transition:.3s;
+background:#fff;
+border:1px solid var(--border);
+border-radius:12px;
+padding:25px;
+box-shadow:0 4px 14px rgba(0,0,0,.04);
+transition:.25s ease;
 }
 
-.card:hover{transform:translateY(-5px);}
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
 
-.area,footer{background:#f7f7f7;}
+/* TYPOGRAPHY */
+h2{
+font-size:1.9rem;
+margin-bottom:20px;
+color:var(--dark);
+}
 
-ul{margin-top:10px;padding-left:20px;}
+h3{
+margin-bottom:10px;
+color:var(--dark);
+}
 
+p{
+font-size:.98rem;
+}
+
+/* BADGE */
+.badge{
+display:inline-block;
+background:#fff;
+color:#000;
+padding:6px 12px;
+border-radius:999px;
+font-size:.85rem;
+margin-bottom:12px;
+}
+
+/* SECTION BACKGROUNDS */
+.alt{
+background:var(--light);
+}
+
+/* LIST */
+ul{
+margin-top:15px;
+padding-left:20px;
+}
+
+/* CTA */
 .cta{
-background:#0077ff;color:#fff;text-align:center;padding:50px 20px;
+text-align:center;
+background:var(--primary);
+color:#fff;
+padding:70px 20px;
 }
 
-form input,form textarea{
-width:100%;padding:12px;margin-bottom:10px;
-border:1px solid #ccc;border-radius:5px;
+.cta h2{
+color:#fff;
+}
+
+/* FORM */
+form input, form textarea{
+width:100%;
+padding:14px;
+margin-bottom:12px;
+border-radius:8px;
+border:1px solid var(--border);
 }
 
 form button{
-background:#0077ff;color:#fff;padding:14px;border:none;width:100%;border-radius:5px;
-}
-
-.call-float{
-position:fixed;bottom:20px;right:20px;
-background:#0077ff;color:#fff;padding:15px;
-border-radius:50%;font-size:20px;text-decoration:none;
-}
-
-.badge{
-display:inline-block;background:#fff;color:#000;
-padding:6px 10px;border-radius:5px;margin-bottom:10px;
+background:var(--primary);
+color:#fff;
+padding:14px;
+border:none;
+border-radius:8px;
 font-weight:600;
+cursor:pointer;
 }
 
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+background:#f5f5f5;
+font-size:.9rem;
+}
+
+/* FLOAT BUTTON */
+.call-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--primary);
+color:#fff;
+padding:16px;
+border-radius:50%;
+font-size:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+text-decoration:none;
+}
+
+/* RESPONSIVE */
 @media(min-width:768px){
 .services{grid-template-columns:repeat(3,1fr);}
 .reviews{grid-template-columns:repeat(3,1fr);}
@@ -89,131 +239,136 @@ font-weight:600;
 <body>
 
 <header>
+<div class="container nav">
 <div class="logo">Connected Plumbing</div>
 <a href="tel:19164964771" class="phone">(916) 496-4771</a>
+</div>
 </header>
 
 <section class="hero">
+<div class="container">
 <div class="badge">⭐ 5.0 Rating • 9 Reviews</div>
 <h1>Fast, Reliable Plumbing in South Lake Tahoe</h1>
-<p>Leak? No hot water? Clogged drain? We show up fast, fix it right, and make it easy.</p>
+<p>We show up fast, fix it right, and make the whole process easy.</p>
 <a href="tel:19164964771" class="btn btn-primary">Call Now</a>
 <a href="#contact" class="btn btn-secondary">Get Free Quote</a>
+</div>
 </section>
 
 <section>
+<div class="container">
 <h2>Professional Plumbing Services</h2>
-<div class="services">
+<div class="grid services">
 
 <div class="card">
 <h3>Leak Detection & Repair</h3>
-<p>Find and fix leaks fast before they turn into expensive damage.</p>
+<p>Stop hidden leaks before they turn into expensive damage.</p>
 </div>
 
 <div class="card">
 <h3>Water Heater Services</h3>
-<p>Install, repair, or upgrade your system for reliable hot water.</p>
+<p>Never run out of hot water again. Install or repair done right.</p>
 </div>
 
 <div class="card">
 <h3>Drain Cleaning</h3>
-<p>Unclog drains and keep everything flowing smoothly.</p>
+<p>Clear stubborn clogs and keep everything flowing smoothly.</p>
 </div>
 
 <div class="card">
 <h3>Toilet & Shower Repair</h3>
-<p>Fix running toilets, broken showers, and everyday plumbing issues.</p>
+<p>Fix common issues fast so your home runs normally again.</p>
 </div>
 
 <div class="card">
-<h3>Sewer & Pipe Repair</h3>
-<p>Durable pipe repairs and sewer solutions done right the first time.</p>
+<h3>Pipe & Sewer Repair</h3>
+<p>Reliable repairs built to last — no shortcuts.</p>
 </div>
 
 <div class="card">
-<h3>Garbage Disposal & Outdoor Plumbing</h3>
-<p>From kitchen disposals to outdoor systems, we’ve got it covered.</p>
+<h3>Garbage Disposal & Outdoor</h3>
+<p>Kitchen and outdoor plumbing handled professionally.</p>
 </div>
 
+</div>
 </div>
 </section>
 
-<section>
+<section class="alt">
+<div class="container">
 <h2>Why Choose Connected Plumbing</h2>
-<p>Connected Plumbing is a local, customer-first company built to do things differently. We may be newer, but that means faster response times, better communication, and real attention to every job.</p>
+<p>We’re a local, customer-first plumbing company focused on speed, quality, and honest work.</p>
 
 <ul>
 <li>✔ 5.0-star rated on Google</li>
-<li>✔ Passed license & background checks</li>
-<li>✔ Fast, same-day service when available</li>
-<li>✔ Honest pricing with no surprises</li>
-<li>✔ Locally owned & operated</li>
+<li>✔ Licensed & background checked</li>
+<li>✔ Fast response times</li>
+<li>✔ Honest pricing</li>
+<li>✔ Locally owned</li>
 </ul>
+</div>
 </section>
 
 <section>
+<div class="container">
 <h2>Real Customer Experiences</h2>
-<div class="reviews">
+<div class="grid reviews">
 
 <div class="card">
-<p>"He showed up fast and fixed our kitchen sink the same day. Super easy to work with and very professional."</p>
-<strong>- South Lake Tahoe Homeowner</strong>
+<p>"Showed up fast and fixed our kitchen sink same day. Super easy to work with."</p>
+<strong>- South Lake Tahoe</strong>
 </div>
 
 <div class="card">
-<p>"We upgraded our water heater and now never run out of hot water. You can tell he knows what he's doing."</p>
-<strong>- Local Family of 4</strong>
+<p>"Installed our water heater and now we never run out. Huge difference."</p>
+<strong>- Local Family</strong>
 </div>
 
 <div class="card">
-<p>"Great work at a fair price. Hard to find honest plumbers like this."</p>
-<strong>- Carson City Customer</strong>
+<p>"Great work for a fair price. Hard to find honest plumbers like this."</p>
+<strong>- Carson City</strong>
 </div>
 
+</div>
 </div>
 </section>
 
-<section>
-<h2>About Connected Plumbing</h2>
-<p>Connected Plumbing proudly serves South Lake Tahoe and surrounding areas with reliable, high-quality plumbing services. Built on trust, responsiveness, and doing the job right the first time, we’re here to make your life easier when plumbing problems show up.</p>
-</section>
-
-<section class="area">
+<section class="alt">
+<div class="container">
 <h2>Service Areas</h2>
-<p>We provide plumbing services across:</p>
-<ul>
-<li>South Lake Tahoe Plumbing</li>
-<li>Reno Plumbing Company</li>
-<li>Carson City Plumber Near Me</li>
-<li>Stateline, Incline Village & surrounding areas</li>
-</ul>
+<p>Serving South Lake Tahoe, Reno, Carson City, Stateline, and surrounding areas.</p>
+</div>
 </section>
 
 <section>
+<div class="container">
 <h2>Frequently Asked Questions</h2>
 
-<h3>How quickly can you get here?</h3>
-<p>We aim for same-day service whenever possible, especially for urgent issues.</p>
+<h3>How fast can you arrive?</h3>
+<p>We aim for same-day service whenever possible.</p>
 
-<h3>Do you offer free estimates?</h3>
-<p>Yes — call or fill out the form and we’ll give you a quick quote.</p>
+<h3>Do you offer free quotes?</h3>
+<p>Yes — call or fill out the form for a quick estimate.</p>
 
-<h3>What plumbing issues do you handle?</h3>
-<p>Everything from leaks and clogs to water heaters, sewer repairs, and more.</p>
+<h3>What do you fix?</h3>
+<p>Leaks, clogs, water heaters, sewer issues, and more.</p>
 
-<h3>Are you licensed and background checked?</h3>
-<p>Yes — we’ve passed both for your peace of mind.</p>
+<h3>Are you licensed?</h3>
+<p>Yes, and fully background checked.</p>
 
+</div>
 </section>
 
 <section id="contact">
-<h2>Get Your Free Quote</h2>
+<div class="container">
+<h2>Get a Free Quote</h2>
 <form>
 <input type="text" placeholder="Your Name" required>
 <input type="tel" placeholder="Phone Number" required>
 <textarea placeholder="What do you need help with?" required></textarea>
 <button type="submit">Request Service</button>
 </form>
+</div>
 </section>
 
 <section class="cta">
@@ -223,9 +378,7 @@ font-weight:600;
 </section>
 
 <footer>
-<p style="text-align:center;padding:20px;">
 © 2026 Connected Plumbing • South Lake Tahoe, CA
-</p>
 </footer>
 
 <a href="tel:19164964771" class="call-float">📞</a>
